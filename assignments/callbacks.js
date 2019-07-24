@@ -34,12 +34,13 @@ getLength(items, function(length){
 console.log(length)
 })
 
-function last(arr, cb) {
+function lastItem(arr, cb) {
   // last passes the last item of the array into the callback.
- return cb(arr[arr.length-1]);
- console.log(cb)
+ return cb(arr[arr.length -1]);
 }
-
+lastItem(items, function(last){
+  console.log(last)
+});
 
 
 
