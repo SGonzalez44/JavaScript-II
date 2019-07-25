@@ -68,23 +68,69 @@ console.log(allCaps);
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
-let largeShirts = runners.filter((shrt) => {
-    return shrt.shirt_size === 'L';
-});
+let largeShirts = runners.filter((shrt) => shrt.shirt_size === 'L');
+
 console.log(largeShirts);	
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = runners.reduce((acc, val) => {
-      return acc + val.donation;
+acc + val.donation;
       }, 0);
       console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
+const students = [
+    {
+        name: 'Pickle Rick',
+        age: 44,
+        phone: '(555)354-5676',
+        id: 1
+    },
+
+    {
+        name: 'Fly Fishing Rick',
+        age: 42,
+        phone: '(555)175-5171',
+        id: 2
+    },
+    {
+        name: 'Rick Sanchez',
+        age: 40,
+        phone: '(555)225-5676',
+        id: 3
+    }
+]
+
 // Problem 1
+
+const studentNamesPhones = [];
+
+students.forEach(student => {
+    return studentNamesPhones.push(`Name: "${student.name}" Phone number: ${student.phone}`);
+})
+
+console.log(studentNamesPhones);
 
 // Problem 2
 
+
+let averageStudentAge = [];
+
+averageStudentAge = students.reduce((averageAge, student) => {
+    return averageAge + student.age;
+}, 0);
+averageStudentAge = Math.floor(averageStudentAge/students.length);
+console.log(averageStudentAge);
+
 // Problem 3
+
+let studentsOver30 = students.filter(student => {
+    if (student.age > 30) {
+        return student;
+    }
+});
+
+console.log(studentsOver30); 

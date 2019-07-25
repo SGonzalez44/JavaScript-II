@@ -39,43 +39,49 @@ function lastItem(arr, cb) {
  return cb(arr[arr.length -1]);
 }
 lastItem(items, function(last){
-  console.log(last)
+  console.log(last);
 });
 
 
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-  let z = x+y;
- return cb(z);
+ return cb(x+y);
 }
 
-
-
+sumNums(2, 4, function(x, y) {
+  console.log(x + y);
+});
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
-  let z = x * y;
-  return cb(z);
+  return cb(x * y)
+ 
 }
 
+multiplyNums(2,2,function(x, y){
+console.log(x * y)
+});
 
 
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-  cb(list.includes(item))
-  
+  if(list.includes(item)){
+    return cb(true);
+  } else {
+    return cb(false);
+  }
 }
 
-
-
-contains('Pencil', items, console.log)
+console.log(contains('Pencil', items, console.log));
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  return cb(array);
 }
+
